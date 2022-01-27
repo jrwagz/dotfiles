@@ -51,6 +51,7 @@ alias gc='git commit'
 alias gp='git pull --rebase'
 alias gcam='git commit -am'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias l="ls -lah"
 
 # Completions.
 autoload -Uz compinit && compinit
@@ -104,6 +105,12 @@ knownrm() {
  else
    sed -i '' "$1d" ~/.ssh/known_hosts
  fi
+}
+
+# show me what's in a directory after I CD into it
+cd(){
+  builtin cd "$@"
+  ls -lah
 }
 
 # Allow Composer to use almost as much RAM as Chrome.
