@@ -21,6 +21,12 @@
 # @see: https://github.com/herrbischoff/awesome-macos-command-line
 #
 # @author Jeff Geerling
+#
+# Improved method for finding values that changed
+# https://github.com/catilac/plistwatch
+# Build this go application and run it, then make your changes, and it will output
+# the exact commands you need to change the setting in question
+#
 
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
@@ -251,6 +257,13 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+
+###############################################################################
+# Menu                                                                        #
+###############################################################################
+
+# Make sure the menu stays visible in full screen app mode
+defaults write "Apple Global Domain" "AppleMenuBarVisibleInFullscreen" '1'
 
 ###############################################################################
 # Kill/restart affected applications                                          #
