@@ -265,6 +265,15 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Make sure the menu stays visible in full screen app mode
 defaults write "Apple Global Domain" "AppleMenuBarVisibleInFullscreen" '1'
 
+# Don't show Spotlight in the menu
+defaults delete "com.apple.Spotlight" "NSStatusItem Visible Item-0"
+
+# Don't Show Siri in the menu
+defaults write "com.apple.Siri" "StatusMenuVisible" '0'
+
+# Don't show the Battery status in the menu, use the one in "Stats" instead
+defaults write "com.apple.controlcenter" "NSStatusItem Visible Battery" '0'
+
 ###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
