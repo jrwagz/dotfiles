@@ -30,6 +30,11 @@ then
   source ~/.aliases
 fi
 
+# Useful mac aliases
+alias get_ssh_enabled='sudo systemsetup -getremotelogin'
+alias enable_ssh='sudo systemsetup -setremotelogin on'
+alias disable_ssh='sudo systemsetup -setremotelogin off'
+
 # Set architecture-specific brew share path.
 arch_name="$(uname -m)"
 if [ "${arch_name}" = "x86_64" ]; then
