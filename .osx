@@ -92,6 +92,12 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable horizontal scrolling as a back button
+# Typically in chrome swiping two fingers to the right will navigate back to the previous URL
+# after this change, instead that will get interpreted as a horizontal scroll, for things like wide
+# spreadsheets
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
