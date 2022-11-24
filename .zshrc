@@ -139,3 +139,8 @@ export COMPOSER_MEMORY_LIMIT=-1
 #}
 #shopt -s extdebug
 #trap prod_command_trap DEBUG
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Source the FPGA Open Source Tools
+source ~/tools/oss-cad-suite-build/darwin-arm64-20221124/environment
