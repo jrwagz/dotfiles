@@ -142,5 +142,7 @@ export COMPOSER_MEMORY_LIMIT=-1
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# Source the FPGA Open Source Tools
-source ~/tools/oss-cad-suite-build/darwin-arm64-20221124/environment
+enable_oss_cad_suite () {
+  # Add the FPGA Open Source Tools to our PATH
+  source /Users/justinwagner/tools/oss-cad-suite-build/darwin-arm64-20221124/environment
+}
