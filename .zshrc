@@ -8,6 +8,8 @@
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
+MY_HOMEDIR=`readlink -f ~`
+
 
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
@@ -114,12 +116,6 @@ knownrm() {
  fi
 }
 
-# show me what's in a directory after I CD into it
-cd(){
-  builtin cd "$@"
-  ls -lah
-}
-
 # Allow Composer to use almost as much RAM as Chrome.
 export COMPOSER_MEMORY_LIMIT=-1
 
@@ -144,5 +140,13 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 enable_oss_cad_suite () {
   # Add the FPGA Open Source Tools to our PATH
-  source /Users/justinwagner/tools/oss-cad-suite-build/darwin-arm64-20221124/environment
+  source ${MY_HOMEDIR}/tools/oss-cad-suite-build/darwin-arm64-20221124/environment
+}
+
+export PATH="${MY_HOMEDIR}/.apio/packages/tools-oss-cad-suite/bin:$PATH"
+
+bcs () {
+  local port=${1:-1}
+  local server_ip=${2:-"192.168.1.163"}
+  telnet ${server_ip} $((7000 + ${port}))
 }
