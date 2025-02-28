@@ -144,7 +144,8 @@ enable_oss_cad_suite () {
   source ${MY_HOMEDIR}/tools/oss-cad-suite-build/darwin-arm64-20221124/environment
 }
 
-export PATH="${MY_HOMEDIR}/.apio/packages/tools-oss-cad-suite/bin:$PATH"
+# This has an x86 version of iverilog that we don't want to use
+# export PATH="${MY_HOMEDIR}/.apio/packages/tools-oss-cad-suite/bin:$PATH"
 
 bcs () {
   local port=${1:-1}
